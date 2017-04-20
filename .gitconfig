@@ -17,6 +17,7 @@
   br = branch
   df = diff
   p = push
+  po = push origin HEAD
   lg = log -p
   ft = fetch
   rb = rebase
