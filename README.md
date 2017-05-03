@@ -27,3 +27,7 @@ There are some things that need to be setup so everything works properly.
 5. Install [diff so fancy](https://github.com/so-fancy/diff-so-fancy)
 6. Copy all files except README.md to your Home dir
 7. Install SourceCodePro font for ther terminal
+
+#### Sublime Text 3
+1. Install [Source Code Pro Medium Font](https://github.com/adobe-fonts/source-code-pro)
+2. Copy settings from Preferences.sublime-settings
