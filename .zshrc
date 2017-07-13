@@ -100,10 +100,13 @@ alias l='ls -CF'
 alias projects='cd ~/Projects'
 alias builds='cd ~/Builds'
 
-# override to install into global python since require-virtualenv = true
-gpip(){
-   PIP_REQUIRE_VIRTUALENV="" pip "$@"
+# pip install for global packages since pip.conf has require-virtualenv = true
+gpip() {
+	PIP_REQUIRE_VIRTUALENV="" pip "$@"
 }
+
+# ruby rbenv
+eval "$(rbenv init -)"
 
 # jenv
 export PATH="$HOME/.jenv/bin:$PATH"
