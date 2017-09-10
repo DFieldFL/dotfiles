@@ -14,10 +14,11 @@ There are some things that need to be setup so everything works properly.
 7. Install [diff so fancy](https://github.com/so-fancy/diff-so-fancy)
 8. Copy all files except README.md to your Home dir
 9. Edit `.tmux.conf` file to use the system clipboard for copy/pasting
-10. iTerm: Enable setting General > Applications in terminal may access clipboard
+10. iTerm: Enable setting - General > Applications in terminal may access clipboard
 11. iTerm: Use existing session or create new one Profile > Send text at start as `tmux attach -t init || tmux new -s init`
-12. iTerm: Install SourceCodePro font and set it as the font in Profile > Text > Font
-13. iTerm: Install Darkside iTerm theme [bahlo iterm-colors GitHub](https://github.com/bahlo/iterm-colors) Profile > Colors > Import
+12. iTerm: Enable 256 colors by by going to Profile > Terminal and setting Report Terminal Type to xterm-256color
+13. iTerm: Install SourceCodePro font and set it as the font in Profile > Text > Font
+14. iTerm: Install Darkside iTerm theme [bahlo iterm-colors GitHub](https://github.com/bahlo/iterm-colors) Profile > Colors > Import
 
 ### Ubuntu
 1. `sudo apt-get install zsh`
