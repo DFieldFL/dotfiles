@@ -14,20 +14,24 @@ There are some things that need to be setup so everything works properly.
 7. Install [diff so fancy](https://github.com/so-fancy/diff-so-fancy)
 8. Copy all files except README.md to your Home dir
 9. Edit `.tmux.conf` file to use the system clipboard for copy/pasting
-10. iTerm: Enable setting - General > Applications in terminal may access clipboard
-11. iTerm: Use existing session or create new one Profile > Send text at start as `tmux attach -t init || tmux new -s init`
-12. iTerm: Enable 256 colors by by going to Profile > Terminal and setting Report Terminal Type to xterm-256color
-13. iTerm: Install SourceCodePro font and set it as the font in Profile > Text > Font
-14. iTerm: Install Darkside iTerm theme [bahlo iterm-colors GitHub](https://github.com/bahlo/iterm-colors) Profile > Colors > Import
+10. Install [tmux plugin manager](https://github.com/tmux-plugins/tpm)
+11. iTerm: Enable setting - General > Applications in terminal may access clipboard
+12. iTerm: Use existing session or create new one Profile > Send text at start as `tmux attach -t init || tmux new -s init`
+13. iTerm: Enable 256 colors by by going to Profile > Terminal and setting Report Terminal Type to xterm-256color
+14. iTerm: Install SourceCodePro font and set it as the font in Profile > Text > Font
+15. iTerm: Install Darkside iTerm theme [bahlo iterm-colors GitHub](https://github.com/bahlo/iterm-colors) Profile > Colors > Import
+16. Install tmux plugins using [tmux plugin manager](https://github.com/tmux-plugins/tpm) key combination
 
 ### Ubuntu
 1. `sudo apt-get install zsh`
 2. `chsh -s $(which zsh)`
 3. Follow the instructions at [oh-my-zsh GitHub](https://github.com/robbyrussell/oh-my-zsh)
 4. `sudo apt-get install tmux`
-5. Install [diff so fancy](https://github.com/so-fancy/diff-so-fancy)
-6. Copy all files except README.md to your Home dir
-7. Install SourceCodePro font for the terminal
+5. Install [tmux plugin manager](https://github.com/tmux-plugins/tpm)
+6. Install [diff so fancy](https://github.com/so-fancy/diff-so-fancy)
+7. Copy all files except README.md to your Home dir
+8. Install SourceCodePro font for the terminal
+9. Install tmux plugins using [tmux plugin manager](https://github.com/tmux-plugins/tpm) key combination
 
 ### Sublime Text 3
 1. Install [Source Code Pro Medium Font](https://github.com/adobe-fonts/source-code-pro)
