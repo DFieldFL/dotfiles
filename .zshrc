@@ -99,6 +99,13 @@ alias l='ls -CF'
 # projects and build aliases
 alias projects='cd ~/Projects'
 alias builds='cd ~/Builds'
+alias rball='~/gitscripts/rebaseall.sh'
+
+#Oh My ZSH Theme customization
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="\u2570 %F{blue}\uE201%F{blue}\uE201%F{green}\uE201%f "
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir rbenv vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history)
 
 # pip install for global packages since pip.conf has require-virtualenv = true
 gpip() {
