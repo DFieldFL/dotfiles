@@ -20,6 +20,7 @@
   po = push origin HEAD
   lg = log -p
   ft = fetch
+  fup = fetch upstream --prune
   rb = rebase
   sh = stash
   shop = stash pop
