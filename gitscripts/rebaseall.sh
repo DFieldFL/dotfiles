@@ -3,7 +3,7 @@
 for d in */ ; do
   cd $d
   if [ -d .git ]; then
-    git fetch upstream
+    git fetch upstream --prune
     # Don't rebase if no upstream exists
     if [ $? -eq 0 ]; then
       echo "\nrebase upstream/master for $d"
