@@ -115,10 +115,6 @@ gpip() {
 # ruby rbenv
 eval "$(rbenv init -)"
 
-# jenv
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
-
 # Node Version Manager
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
