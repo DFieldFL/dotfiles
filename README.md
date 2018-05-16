@@ -18,7 +18,7 @@ There are some things that need to be setup so everything works properly.
 11. iTerm: Enable setting - General > Applications in terminal may access clipboard
 12. iTerm: Use existing session or create new one Profile > Send text at start as `tmux attach -t init || tmux new -s init`
 13. iTerm: Enable 256 colors by by going to Profile > Terminal and setting Report Terminal Type to xterm-256color
-14. iTerm: Install SourceCodePro font and set it as the font in Profile > Text > Font
+14. iTerm: Install FiraCode Nerd font and set it as the font in Profile > Text > Font
 15. iTerm: Install Darkside iTerm theme [bahlo iterm-colors GitHub](https://github.com/bahlo/iterm-colors) Profile > Colors > Import
 16. Install tmux plugins using [tmux plugin manager](https://github.com/tmux-plugins/tpm) key combination
 
@@ -30,9 +30,9 @@ There are some things that need to be setup so everything works properly.
 5. Install [tmux plugin manager](https://github.com/tmux-plugins/tpm)
 6. Install [diff so fancy](https://github.com/so-fancy/diff-so-fancy)
 7. Copy all files except README.md to your Home dir
-8. Install SourceCodePro font for the terminal
+8. Install FiraCode Nerd font for the terminal
 9. Install tmux plugins using [tmux plugin manager](https://github.com/tmux-plugins/tpm) key combination
 
 ### Sublime Text 3
-1. Install [Source Code Pro Medium Font](https://github.com/adobe-fonts/source-code-pro)
+1. Install FiraCode Nerd font
 2. Copy settings from Preferences.sublime-settings
