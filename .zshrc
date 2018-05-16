@@ -115,10 +115,10 @@ gpip() {
 	PIP_REQUIRE_VIRTUALENV="" pip "$@"
 }
 
-# ruby rbenv
-eval "$(rbenv init -)"
-
 if [ -n "$TMUX" ]; then
+	# ruby rbenv
+	eval "$(rbenv init -)"
+
         # Node Version Manager
         export NVM_DIR="$HOME/.nvm"
         . "/usr/local/opt/nvm/nvm.sh"
