@@ -13,8 +13,17 @@ export ZSH=/Users/$USER/.oh-my-zsh
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 #ZSH_THEME="robbyrussell"
-POWERLEVEL9K_MODE='awesome-patched'
+POWERLEVEL9K_MODE='nerdfont-complete'
 ZSH_THEME="powerlevel9k/powerlevel9k"
+
+#Oh My ZSH Theme customization
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="\u2570 %F{blue}\uf105%F{blue}\uf105%F{green}\uf105%f "
+POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR="\ue0c6"
+POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR="\ue0c7"
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir rbenv vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history)
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -101,12 +110,6 @@ alias projects='cd ~/Projects'
 alias builds='cd ~/Builds'
 alias rball='~/gitscripts/rebaseall.sh'
 
-#Oh My ZSH Theme customization
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="\u2570 %F{blue}\uE201%F{blue}\uE201%F{green}\uE201%f "
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir rbenv vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history)
-
 # pip install for global packages since pip.conf has require-virtualenv = true
 gpip() {
 	PIP_REQUIRE_VIRTUALENV="" pip "$@"
@@ -115,6 +118,12 @@ gpip() {
 # ruby rbenv
 eval "$(rbenv init -)"
 
-# Node Version Manager
-export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
+if [ -n "$TMUX" ]; then
+        # Node Version Manager
+        export NVM_DIR="$HOME/.nvm"
+        . "/usr/local/opt/nvm/nvm.sh"
+
+        #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+        export SDKMAN_DIR="/Users/DFieldFL/.sdkman"
+        [[ -s "/Users/DFieldFL/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/DFieldFL/.sdkman/bin/sdkman-init.sh"
+fi
