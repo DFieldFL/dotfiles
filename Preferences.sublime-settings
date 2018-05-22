@@ -47,7 +47,6 @@
   "font_face": "Fira Code",
   "font_options":
   [
-    "gray_antialias"
   ],
   "highlight_line": true,
   "ignored_packages":
