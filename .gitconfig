@@ -27,6 +27,7 @@
   sh = stash
   shop = stash pop
   rum = rebase upstream/master
+  rom = rebase origin/master
   com = checkout master
   rb2 = rebase -i HEAD~2
 [pager]
