@@ -10,7 +10,7 @@ There are some things that need to be setup so everything works properly.
 3. Install [oh-my-zsh GitHub](https://github.com/robbyrussell/oh-my-zsh)
 4. Install [oh-my-zsh PowerLevel9k Theme GitHub](https://github.com/bhilburn/powerlevel9k)
 5. `brew install tmux`
-6. `brew install shpotify`
+6. `brew install tig`
 7. Install [diff so fancy](https://github.com/so-fancy/diff-so-fancy)
 8. Copy all files except README.md to your Home dir
 9. Edit `.tmux.conf` file to use the system clipboard for copy/pasting
@@ -29,9 +29,10 @@ There are some things that need to be setup so everything works properly.
 4. `sudo apt-get install tmux`
 5. Install [tmux plugin manager](https://github.com/tmux-plugins/tpm)
 6. Install [diff so fancy](https://github.com/so-fancy/diff-so-fancy)
-7. Copy all files except README.md to your Home dir
-8. Install FiraCode Nerd font for the terminal
-9. Install tmux plugins using [tmux plugin manager](https://github.com/tmux-plugins/tpm) key combination
+7. Install [tig](https://jonas.github.io/tig/INSTALL.html)
+8. Copy all files except README.md to your Home dir
+9. Install FiraCode Nerd font for the terminal
+10. Install tmux plugins using [tmux plugin manager](https://github.com/tmux-plugins/tpm) key combination
 
 ### Sublime Text 3
 1. Install FiraCode Nerd font
