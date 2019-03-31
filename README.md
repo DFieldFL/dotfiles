@@ -13,14 +13,15 @@ There are some things that need to be setup so everything works properly.
 6. `brew install tig`
 7. Install [diff so fancy](https://github.com/so-fancy/diff-so-fancy)
 8. Copy all files except README.md to your Home dir
-9. Edit `.tmux.conf` file to use the system clipboard for copy/pasting
-10. Install [tmux plugin manager](https://github.com/tmux-plugins/tpm)
-11. iTerm: Enable setting - General > Applications in terminal may access clipboard
-12. iTerm: Use existing session or create new one Profile > Send text at start as `tmux attach -t init || tmux new -s init`
-13. iTerm: Enable 256 colors by by going to Profile > Terminal and setting Report Terminal Type to xterm-256color
-14. iTerm: Install FiraCode Nerd font and set it as the font in Profile > Text > Font
-15. iTerm: Install Darkside iTerm theme [bahlo iterm-colors GitHub](https://github.com/bahlo/iterm-colors) Profile > Colors > Import
-16. Install tmux plugins using [tmux plugin manager](https://github.com/tmux-plugins/tpm) key combination
+9. `brew install reattach-to-user-namespace`
+10. Edit `.tmux.conf` file to use the system clipboard for copy/pasting
+11. Install [tmux plugin manager](https://github.com/tmux-plugins/tpm)
+12. iTerm: Enable setting - General > Applications in terminal may access clipboard
+13. iTerm: Use existing session or create new one Profile > Send text at start as `tmux attach -t init || tmux new -s init`
+14. iTerm: Enable 256 colors by by going to Profile > Terminal and setting Report Terminal Type to xterm-256color
+15. iTerm: Install FiraCode Nerd font and set it as the font in Profile > Text > Font
+16. iTerm: Install Darkside iTerm theme [bahlo iterm-colors GitHub](https://github.com/bahlo/iterm-colors) Profile > Colors > Import
+17. Install tmux plugins using [tmux plugin manager](https://github.com/tmux-plugins/tpm) key combination
 
 ### Ubuntu
 1. `sudo apt-get install zsh`
