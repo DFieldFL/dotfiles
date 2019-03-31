@@ -22,6 +22,7 @@ There are some things that need to be setup so everything works properly.
 15. iTerm: Install FiraCode Nerd font and set it as the font in Profile > Text > Font
 16. iTerm: Install Darkside iTerm theme [bahlo iterm-colors GitHub](https://github.com/bahlo/iterm-colors) Profile > Colors > Import
 17. Install tmux plugins using [tmux plugin manager](https://github.com/tmux-plugins/tpm) key combination
+18. If you have permission issues to the usr dir try adding `ZSH_DISABLE_COMPFIX=true` to .zshrc
 
 ### Ubuntu
 1. `sudo apt-get install zsh`
