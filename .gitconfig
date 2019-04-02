@@ -17,11 +17,13 @@
   br = branch
   df = diff
   p = push
-  po = push origin HEAD
+  po = push origin
+  poh = push origin HEAD
   lg = log -p
   ft = fetch
   fu = fetch upstream
   fup = fetch upstream --prune
+  fop = fetch origin --prune
   fap = fetch --all --prune
   rb = rebase
   sh = stash
@@ -38,3 +40,5 @@
   oldHighlight = red bold 52
   newNormal = green bold
   newHighlight = green bold 22
+[commit]
+  gpgsign = true
