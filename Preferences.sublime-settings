@@ -1,10 +1,11 @@
 {
+  "color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
+  "theme": "Material-Theme.sublime-theme",
   "always_show_minimap_viewport": true,
   "auto_complete_commit_on_tab": true,
   "bold_folder_labels": true,
   "caret_extra_width": 1,
   "caret_style": "phase",
-  "color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
   "default_line_ending": "unix",
   "detect_indentation": false,
   "draw_minimap_border": true,
@@ -44,15 +45,14 @@
     "target",
     "node_modules"
   ],
-  "font_face": "Fira Code",
+  "font_face": "Fira Code Regular",
   "font_options":
   [
+    "gray_antialias",
+    "subpixel_antialias"
   ],
   "highlight_line": true,
-  "ignored_packages":
-  [
-    "Vintage"
-  ],
+  "ignored_packages": [],
   "indent_guide_options":
   [
     "draw_normal",
@@ -67,7 +67,6 @@
   ],
   "tab_size": 2,
   "tabs_medium": true,
-  "theme": "Material-Theme.sublime-theme",
   "translate_tabs_to_spaces": true,
   "trim_trailing_white_space_on_save": true,
   "word_wrap": true
