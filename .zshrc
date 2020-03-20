@@ -15,7 +15,10 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # ZSH_THEME="robbyrussell"
 POWERLEVEL9K_MODE='nerdfont-complete'
-ZSH_THEME="powerlevel9k/powerlevel9k"
+
+# Comment/Uncomment the 2 below lines depending on whether you install powerlevel9k via brew or manually
+source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
+#ZSH_THEME="powerlevel9k/powerlevel9k"
 
 #Oh My ZSH Theme customization
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
