@@ -1,7 +1,8 @@
 #!/bin/bash
 
-if [ $1 -eq 0 ]; then
+if [ -z "$1" ]; then
   echo "Please provide an argument to be used for the branch to rebase."
+  exit 1
 fi;
 
 branchName=$1

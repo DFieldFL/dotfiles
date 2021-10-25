@@ -1,3 +1,5 @@
+ZSH_DISABLE_COMPFIX=true
+
 export TERM="xterm-256color"
 
 # brew install zsh-completions
@@ -5,6 +7,9 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$HOME/.rbenv/bin:$PATH
+
+# Kubectl config files location
+#export KUBECONFIG=~/.kube/config:~/.kube/example_config
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"

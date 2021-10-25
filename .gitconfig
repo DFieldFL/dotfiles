@@ -5,6 +5,7 @@
 [core]
 	autocrlf = false
 	editor = vim
+	pager = delta
 [push]
 	default = simple
 [alias]
@@ -19,6 +20,7 @@
 	df = diff
 	p = push
 	po = push origin
+	pu = push upstream
 	poh = push origin HEAD
 	lg = log -p
 	ft = fetch
@@ -29,18 +31,22 @@
 	rb = rebase
 	sh = stash
 	shop = stash pop
-	rum = rebase upstream/master
-	rom = rebase origin/master
-	com = checkout master
-	rb2 = rebase -i HEAD~2
-[pager]
-	diff = diff-so-fancy | less --tabs=1,5 -R
-	show = diff-so-fancy | less --tabs=1,5 -R
-[color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-	newHighlight = green bold 22
+	rum = rebase upstream/main
+	rumstr = rebase upstream/master
+	rud = rebase upstream/develop
+	cod = checkout develop
+	romstr = rebase origin/master
+	com = checkout main
+	comstr = checkout master
+	rbi2 = rebase -i HEAD~2
+[delta]
+	plus-style = "syntax #012800"
+	minus-style = "syntax #340001"
+	syntax-theme = Monokai Extended
+	line-numbers = true
+	side-by-side = true
+[interactive]
+	diffFilter = delta --color-only
 [commit]
 	gpgsign = true
 
