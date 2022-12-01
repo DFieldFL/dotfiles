@@ -38,6 +38,7 @@ There are some things that need to be setup so everything works properly.
 9. Uncomment in .zshrc `ZSH_THEME="powerlevel9k/powerlevel9k"` and comment `source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme`
 10. Modify .gitconfig to add `signingKey`
 11. Install FiraCode Nerd font for the terminal
+12. Install xclip `sudo apt install xclip` and edit `.tmux.config` file to use xclip for copy/paste
 12. Install tmux plugins using [tmux plugin manager](https://github.com/tmux-plugins/tpm) key combination
 
 ### Sublime Text 3
