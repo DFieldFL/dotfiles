@@ -55,6 +55,7 @@ alias g='git'
 alias k='kubectl'
 alias vim='nvim'
 alias projs='cd ~/Projects'
+alias cat='bat'
 
 source <(fzf --zsh)
 eval "$(zoxide init --cmd cd zsh)"

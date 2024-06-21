@@ -17,7 +17,9 @@ There are some things that need to be setup so everything works properly.
 1. `brew Install oh-my-posh`
 1. `brew isntall neovim`
 1. `brew install tig`
-1. `brew intall git-delta`
+1. `brew install git-delta`
+1. `brew install diff-so-fancy`
+1. `brew install bat`
 1. install [wezterm](https://wezfurlong.org/wezterm/)
 1. install [CodeNewRoman Nerd Font](https://www.nerdfonts.com/font-downloads)
 1. Copy all files except README.md to your Home dir
