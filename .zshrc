@@ -1,3 +1,5 @@
+export GPG_TTY=$(tty)
+
 source /opt/homebrew/opt/zinit/zinit.zsh
 
 # plugins
