@@ -48,8 +48,8 @@ zstyle ':completion:*:*:docker:*' option-stacking yes
 zstyle ':completion:*:*:docker-*:*' option-stacking yes
 
 # Aliases
-alias ls='ls --color'
-alias ll='ls -alh'
+alias ls='eza'
+alias ll='ls --all --long --header'
 alias d='docker'
 alias g='git'
 alias k='kubectl'
