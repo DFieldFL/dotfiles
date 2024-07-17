@@ -1,6 +1,14 @@
 export GPG_TTY=$(tty)
 
-source /opt/homebrew/opt/zinit/zinit.zsh
+if [[ $(uname) == "Darwin" ]]; then
+  # echo "sourcing mac"
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+  source /opt/homebrew/opt/zinit/zinit.zsh
+elif [[ $(uname) == "Linux" ]]; then
+  # echo "sourcing linux"
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+  source /home/linuxbrew/.linuxbrew/opt/zinit/zinit.sh
+fi
 
 # plugins
 zinit light zsh-users/zsh-syntax-highlighting
@@ -10,6 +18,7 @@ zinit light Aloxaf/fzf-tab
 
 # snippets
 zinit snippet OMZP::command-not-found
+zinit ice as"completion"
 zinit snippet https://github.com/docker/cli/blob/master/contrib/completion/zsh/_docker
 
 # load completions
@@ -18,8 +27,7 @@ zinit cdreplay -q
 
 # oh-my-posh is not compatible with Mac's default terminal
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
-  # eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/catppuccin.omp.json)"
-  eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
+  eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/catppuccin_mocha.omp.json)"
 fi
 
 # Keybindings
@@ -47,7 +55,9 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 zstyle ':completion:*:*:docker:*' option-stacking yes
 zstyle ':completion:*:*:docker-*:*' option-stacking yes
 
+
 # Aliases
+# alias ls='ls --color'
 alias ls='eza'
 alias ll='ls --all --long --header'
 alias d='docker'
@@ -56,6 +66,7 @@ alias k='kubectl'
 alias vim='nvim'
 alias projs='cd ~/Projects'
 alias cat='bat'
+alias tmx='tmux new -As init'
 
 source <(fzf --zsh)
 eval "$(zoxide init --cmd cd zsh)"
