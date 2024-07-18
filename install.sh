@@ -19,13 +19,15 @@ echo "Defaulting shell to zshell"
 sudo chsh -s $(which zsh) $(whoami)
 
 echo "Setting up dotfiles"
-if [ -d ~/.confg ]; then
+if [ -d ~/.config ]; then
   rm -rf ~/.config
 fi
 
-ln -sf "$(dirname "$0")/.config" ~/
-ln -sf "$(dirname "$0")/.zshrc" ~/.zshrc
-ln -sf "$(dirname "$0")/.tigrc" ~/.tigrc
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
+
+ln -sf "$SCRIPT_DIR/.config" ~/
+ln -sf "$SCRIPT_DIR/.zshrc" ~/.zshrc
+ln -sf "$SCRIPT_DIR/.tigrc" ~/.tigrc
 
 echo "To complete installation by restarting the terminal with zshell..."
 echo "Load tmux using command 'tmx' and 'prefix + I' to install plugins..."

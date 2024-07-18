@@ -7,7 +7,7 @@ if [[ $(uname) == "Darwin" ]]; then
 elif [[ $(uname) == "Linux" ]]; then
   # echo "sourcing linux"
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-  source /home/linuxbrew/.linuxbrew/opt/zinit/zinit.sh
+  source /home/linuxbrew/.linuxbrew/opt/zinit/zinit.zsh
 fi
 
 # plugins
