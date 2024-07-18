@@ -1,3 +1,5 @@
+#!/bin/bash
+
 if [ ! -d /opt/homebrew ] && [ ! -d /home/linuxbrew ]; then
   NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
