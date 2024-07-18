@@ -2,14 +2,14 @@
 
 if [ ! -d /opt/homebrew ] && [ ! -d /home/linuxbrew ]; then
   NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
 
-  if [ "$(uname)" == "Darwin" ]; then
-    # echo "sourcing mac"
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-  elif [ "$(uname)" == "Linux" ]; then
-    # echo "sourcing linux"
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-  fi
+if [ "$(uname)" == "Darwin" ]; then
+  # echo "sourcing mac"
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [ "$(uname)" == "Linux" ]; then
+  # echo "sourcing linux"
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
 brew update
