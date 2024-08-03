@@ -20,14 +20,15 @@ sudo chsh -s $(which zsh) $(whoami)
 
 echo "Setting up dotfiles"
 if [ -d ~/.config ]; then
-  rm -rf ~/.config
+  echo "Backing up ~/.config to ~/.config.bak"
+  cp -r ~/.config ~/.config.bak
 fi
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
 
-ln -sf "$SCRIPT_DIR/.config" ~/
-ln -sf "$SCRIPT_DIR/.zshrc" ~/.zshrc
-ln -sf "$SCRIPT_DIR/.tigrc" ~/.tigrc
+cp -rf "$SCRIPT_DIR/.config" ~/
+cp -f "$SCRIPT_DIR/.zshrc" ~/.zshrc
+cp -f "$SCRIPT_DIR/.tigrc" ~/.tigrc
 
 echo "To complete installation by restarting the terminal with zshell..."
 echo "Load tmux using command 'tmx' and 'prefix + I' to install plugins..."
