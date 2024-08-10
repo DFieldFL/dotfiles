@@ -27,12 +27,18 @@ if [ -f ~/.zshrc ]; then
   echo "Backing up ~/.zshrc to ~/.zshrc.bak"
   cp ~/.zshrc ~/.zshrc.bak
 fi
+if [ -f ~/.gitconfig ]; then
+  echo "Backing up ~/.gitconfig to ~/.gitconfig.bak"
+  cp ~/.gitconfig ~/.gitconfig.bak
+fi
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
 
 cp -rf "$SCRIPT_DIR/.config" ~/
 cp -f "$SCRIPT_DIR/.zshrc" ~/.zshrc
+cp -f "$SCRIPT_DIR/.gitconfig" ~/.gitconfig
 cp -f "$SCRIPT_DIR/.tigrc" ~/.tigrc
 
 echo "To complete installation by restarting the terminal with zshell..."
+echo "Edit .gitconfig to include your email"
 echo "Load tmux using command 'tmx' and 'prefix + I' to install plugins..."
