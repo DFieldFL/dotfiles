@@ -23,6 +23,10 @@ if [ -d ~/.config ]; then
   echo "Backing up ~/.config to ~/.config.bak"
   cp -r ~/.config ~/.config.bak
 fi
+if [ -f ~/.zshrc ]; then
+  echo "Backing up ~/.zshrc to ~/.zshrc.bak"
+  cp ~/.zshrc ~/.zshrc.bak
+fi
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
 

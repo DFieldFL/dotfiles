@@ -57,15 +57,12 @@ zstyle ':completion:*:*:docker-*:*' option-stacking yes
 
 
 # Aliases
-# alias ls='ls --color'
-alias ls='eza'
-alias ll='ls --all --long --header'
+alias lz='eza'
+alias ll='lz --all --long --header'
 alias d='docker'
 alias g='git'
 alias k='kubectl'
-alias vim='nvim'
 alias projs='cd ~/Projects'
-alias cat='bat'
 alias tmx='tmux new -As init'
 
 source <(fzf --zsh)
