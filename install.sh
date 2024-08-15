@@ -45,9 +45,9 @@ fi
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
 
-cp -rf "$SCRIPT_DIR/.config/*" ~/.config/
-cp -f "$SCRIPT_DIR/.zshrc" ~/.zshrc
-cp -f "$SCRIPT_DIR/.tigrc" ~/.tigrc
+cp -rf $SCRIPT_DIR/.config/* ~/.config/
+cp -f $SCRIPT_DIR/.zshrc ~/.zshrc
+cp -f $SCRIPT_DIR/.tigrc ~/.tigrc
 
 echo "To complete installation by restarting the terminal with zshell..."
 echo "Load tmux using command 'tmx' and 'prefix + I' to install plugins..."
