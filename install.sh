@@ -45,7 +45,7 @@ fi
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
 
-cp -rf "$SCRIPT_DIR/.config" ~/
+cp -rf "$SCRIPT_DIR/.config/*" ~/.config/
 cp -f "$SCRIPT_DIR/.zshrc" ~/.zshrc
 cp -f "$SCRIPT_DIR/.tigrc" ~/.tigrc
 
