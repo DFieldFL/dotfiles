@@ -1,7 +1,10 @@
 sudo apt update
-sudo apt install -y curl git zsh tmux bat fzf btop tig zoxide
+sudo apt install -y vim curl git zsh tmux bat btop tig zoxide
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install --no-update-rc --no-key-bindings --completion --xdg
 
 curl -LOs https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
 sudo rm -rf /opt/nvim
