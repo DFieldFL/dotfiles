@@ -1,5 +1,7 @@
 sudo apt update
-sudo apt install -y vim curl git zsh tmux bat btop tig zoxide
+sudo apt install -y vim curl git zsh tmux bat btop tig
+
+curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
