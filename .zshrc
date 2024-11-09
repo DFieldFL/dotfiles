@@ -75,11 +75,7 @@ alias projs='cd ~/Projects'
 alias tmx='tmux new -As init'
 
 # pipx
-if [[ $(uname) == "Darwin" ]]; then
-    export PATH="$PATH:/Users/$USERNAME/.local/bin"
-elif [[ $(uname) == "Linux" ]]; then
-    export PATH="$PATH:/home/$USERNAME/.local/bin"
-fi
+export PATH="$PATH:$HOME/.local/bin"
 
 eval "$(register-python-argcomplete pipx)"
 source <(fzf --zsh)
