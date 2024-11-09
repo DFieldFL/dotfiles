@@ -1,13 +1,19 @@
 export GPG_TTY=$(tty)
 
 if [[ $(uname) == "Darwin" ]]; then
-  # echo "sourcing mac"
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-  source /opt/homebrew/opt/zinit/zinit.zsh
+    if [[ -f /opt/homebrew/bin/brew ]]; then
+        # echo "sourcing brew for macos"
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+        source /opt/homebrew/opt/zinit/zinit.zsh
+    fi
 elif [[ $(uname) == "Linux" ]]; then
-  # echo "sourcing linux"
-  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-  source /home/linuxbrew/.linuxbrew/opt/zinit/zinit.zsh
+    if [[ $(uname -m) == "x86_64" && -f /opt/homebrew/bin/brew ]]; then
+       # echo "sourcing brew for linux"
+       eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+       source /home/linuxbrew/.linuxbrew/opt/zinit/zinit.zsh
+    elif [[ $(uname -m) == "arm64" ]]; then
+       echo "TODO sourcing nix for linux"
+    fi
 fi
 
 # plugins
@@ -55,6 +61,7 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 zstyle ':completion:*:*:docker:*' option-stacking yes
 zstyle ':completion:*:*:docker-*:*' option-stacking yes
 
+# export KUBECONFIG=~/.kube/config
 
 # Aliases
 alias lz='eza'
@@ -65,5 +72,9 @@ alias k='kubectl'
 alias projs='cd ~/Projects'
 alias tmx='tmux new -As init'
 
+eval "$(register-python-argcomplete pipx)"
 source <(fzf --zsh)
 eval "$(zoxide init --cmd cd zsh)"
+
+# pipx
+export PATH="$PATH:~/.local/bin"
