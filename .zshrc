@@ -1,5 +1,7 @@
 export GPG_TTY=$(tty)
 
+autoload -U compinit && compinit
+
 if [[ $(uname) == "Darwin" ]]; then
     if [[ -f /opt/homebrew/bin/brew ]]; then
         # echo "sourcing brew for macos"
@@ -72,9 +74,13 @@ alias k='kubectl'
 alias projs='cd ~/Projects'
 alias tmx='tmux new -As init'
 
+# pipx
+if [[ $(uname) == "Darwin" ]]; then
+    export PATH="$PATH:/Users/$USERNAME/.local/bin"
+elif [[ $(uname) == "Linux" ]]; then
+    export PATH="$PATH:/home/$USERNAME/.local/bin"
+fi
+
 eval "$(register-python-argcomplete pipx)"
 source <(fzf --zsh)
 eval "$(zoxide init --cmd cd zsh)"
-
-# pipx
-export PATH="$PATH:~/.local/bin"

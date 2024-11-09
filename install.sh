@@ -7,16 +7,16 @@ PROCESSOR_ARCH="$(uname -m)"
 # Determine Package Manager based on OS and Processor arch
 if [[ "$(uname)" == "Linux" ]]; then
     if [[ $PROCESSOR_ARCH == "x86_64" ]]; then
-        PACKAGE_MANAGER = "BREW_LINUX"
+        PACKAGE_MANAGER="BREW_LINUX"
     elif [[ $PROCESSOR_ARCH == "arm64" ]]; then
-        PACKAGE_MANAGER = "NIX_LINUX"
+        PACKAGE_MANAGER="NIX_LINUX"
     fi
 elif [[ "$(uname)" == "Darwin" ]]; then
-    PACKAGE_MANAGER = "BREW_MACOS"
+    PACKAGE_MANAGER="BREW_MACOS"
 fi
 
 # Install Package Manager
-if [[ $PACKAGE_MANAGE == "BREW_LINUX" ]]; then
+if [[ $PACKAGE_MANAGER == "BREW_LINUX" ]]; then
     echo "Install linux homebrew package manager"
     if [[ ! -d /home/linuxbrew ]]; then
         NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -25,13 +25,13 @@ if [[ $PACKAGE_MANAGE == "BREW_LINUX" ]]; then
     $SCRIPT_DIR/install_scripts/homebrew_packages.sh
 fi
 
-if [[ $PACKAGE_MANAGE == "NIX_LINUX" ]]; then
+if [[ $PACKAGE_MANAGER == "NIX_LINUX" ]]; then
     echo "Install linux nix package manager"
     sh <(curl -L https://nixos.org/nix/install) --daemon
     $SCRIPT_DIR/install_scripts/nix_packages.sh
 fi
 
-if [[ $PACKAGE_MANAGE == "BREW_MACOS" ]]; then
+if [[ $PACKAGE_MANAGER == "BREW_MACOS" ]]; then
     echo "Install macos homebrew package manager"
     if [[ ! -d /opt/homebrew ]]; then
         NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -39,6 +39,8 @@ if [[ $PACKAGE_MANAGE == "BREW_MACOS" ]]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
     $SCRIPT_DIR/install_scripts/homebrew_packages.sh
 fi
+
+pipx install argcomplete
 
 echo "Defaulting shell to zshell"
 echo $(which zsh)
