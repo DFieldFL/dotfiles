@@ -1,5 +1,7 @@
 export GPG_TTY=$(tty)
 
+gpgconf --launch gpg-agent
+
 autoload -U compinit && compinit
 
 if [[ $(uname) == "Darwin" ]]; then

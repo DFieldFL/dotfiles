@@ -4,6 +4,25 @@ PACKAGE_MANAGER="NONE"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
 PROCESSOR_ARCH="$(uname -m)"
 
+echo "Setting up dotfiles"
+if [ -d ~/.config ]; then
+    echo "Backing up ~/.config to ~/.config.bak"
+    cp -r ~/.config ~/.config.bak
+fi
+if [ -f ~/.zshrc ]; then
+    echo "Backing up ~/.zshrc to ~/.zshrc.bak"
+    cp ~/.zshrc ~/.zshrc.bak
+fi
+if [ -f ~/.gitconfig ]; then
+    echo "Backing up ~/.gitconfig to ~/.gitconfig.bak"
+    cp ~/.gitconfig ~/.gitconfig.bak
+fi
+
+cp -rf "$SCRIPT_DIR/.config" ~/
+cp -f "$SCRIPT_DIR/.zshrc" ~/.zshrc
+cp -f "$SCRIPT_DIR/.gitconfig" ~/.gitconfig
+cp -f "$SCRIPT_DIR/.tigrc" ~/.tigrc
+
 # Determine Package Manager based on OS and Processor arch
 if [[ "$(uname)" == "Linux" ]]; then
     if [[ $PROCESSOR_ARCH == "x86_64" ]]; then
@@ -25,12 +44,6 @@ if [[ $PACKAGE_MANAGER == "BREW_LINUX" ]]; then
     $SCRIPT_DIR/install_scripts/homebrew_packages.sh
 fi
 
-if [[ $PACKAGE_MANAGER == "NIX_LINUX" ]]; then
-    echo "Install linux nix package manager"
-    sh <(curl -L https://nixos.org/nix/install) --daemon
-    $SCRIPT_DIR/install_scripts/nix_packages.sh
-fi
-
 if [[ $PACKAGE_MANAGER == "BREW_MACOS" ]]; then
     echo "Install macos homebrew package manager"
     if [[ ! -d /opt/homebrew ]]; then
@@ -40,30 +53,18 @@ if [[ $PACKAGE_MANAGER == "BREW_MACOS" ]]; then
     $SCRIPT_DIR/install_scripts/homebrew_packages.sh
 fi
 
+if [[ $PACKAGE_MANAGER == "NIX_LINUX" ]]; then
+    echo "Install linux nix package manager"
+    sh <(curl -L https://nixos.org/nix/install) --daemon
+    $SCRIPT_DIR/install_scripts/nix_packages.sh
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
+
 pipx install argcomplete
 
 echo "Defaulting shell to zshell"
 echo $(which zsh)
 sudo chsh -s $(which zsh) $(whoami)
-
-echo "Setting up dotfiles"
-if [ -d ~/.config ]; then
-    echo "Backing up ~/.config to ~/.config.bak"
-    cp -r ~/.config ~/.config.bak
-fi
-if [ -f ~/.zshrc ]; then
-    echo "Backing up ~/.zshrc to ~/.zshrc.bak"
-    cp ~/.zshrc ~/.zshrc.bak
-fi
-if [ -f ~/.gitconfig ]; then
-    echo "Backing up ~/.gitconfig to ~/.gitconfig.bak"
-    cp ~/.gitconfig ~/.gitconfig.bak
-fi
-
-cp -rf "$SCRIPT_DIR/.config" ~/
-cp -f "$SCRIPT_DIR/.zshrc" ~/.zshrc
-cp -f "$SCRIPT_DIR/.gitconfig" ~/.gitconfig
-cp -f "$SCRIPT_DIR/.tigrc" ~/.tigrc
 
 echo "To complete installation by restarting the terminal with zshell..."
 echo "Edit .gitconfig to include your email"
