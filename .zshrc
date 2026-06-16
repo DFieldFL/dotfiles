@@ -35,10 +35,7 @@ zinit snippet https://github.com/docker/cli/blob/master/contrib/completion/zsh/_
 autoload -U compinit && compinit
 zinit cdreplay -q
 
-# oh-my-posh is not compatible with Mac's default terminal
-if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
-  eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/catppuccin_mocha.omp.json)"
-fi
+eval "$(starship init zsh)"
 
 # Keybindings
 bindkey -v
@@ -82,3 +79,8 @@ export PATH="$PATH:$HOME/.local/bin"
 eval "$(register-python-argcomplete pipx)"
 source <(fzf --zsh)
 eval "$(zoxide init --cmd cd zsh)"
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/dfieldfl/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
